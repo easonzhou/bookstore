@@ -10,7 +10,8 @@
     "config": "^1.20.1",
     "express": "^4.13.4",
     "mongoose": "^4.4.15",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -19,6 +20,9 @@
   },
   "scripts": {
     "start": "SET NODE_ENV=dev && node server.js",
-    "test": "mocha --timeout 10000"
-  }
+    "test": "mocha --timeout 10000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
